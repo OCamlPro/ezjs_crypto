@@ -77,7 +77,7 @@ class type crypto = object
   method getRandomValues : ('a, 'b) typedArray t -> unit meth
 end
 
-let crypto : crypto t = Unsafe.variable "window.crypto"
+let crypto : crypto t = Unsafe.global##.crypto
 let subtle : subtle t = crypto##.subtle
 
 let random_values n =
